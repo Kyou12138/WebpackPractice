@@ -1,3 +1,4 @@
+const FileListPlugin = require("./plugins/FileListPlugin");
 module.exports = {
     mode: "development",
     devtool: "source-map",
@@ -13,7 +14,7 @@ module.exports = {
                     {
                         loader: "./loaders/image-loader",
                         options: {
-                            limit: 20000,
+                            limit: 15000,
                             name: "img-[contenthash:5].[ext]",
                         },
                     },
@@ -21,4 +22,5 @@ module.exports = {
             },
         ],
     },
+    plugins: [new FileListPlugin("文件列表.md")],
 };
